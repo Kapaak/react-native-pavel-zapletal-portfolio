@@ -1,15 +1,15 @@
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, View } from 'react-native'
 
-import EditScreenInfo from "@/components/EditScreenInfo";
-import styled from "styled-components/native";
-import { Title } from "@/components/Title";
+import styled from 'styled-components/native'
+
+import { Title } from '@/components/Title'
 
 export default function AboutMeTab() {
   return (
     <ScrollView>
       <AboutMeView>
         <Title>About me</Title>
-        <ProfieImage source={require("@/assets/images/profile-img.webp")} />
+        <ProfieImage source={require('@/assets/images/profile-img.webp')} />
         <View />
         <SText>
           Hi, I'm Pavel Zapletal a self-taught JavaScript programmer. I'm 29 yo,
@@ -28,24 +28,24 @@ export default function AboutMeTab() {
         </SText>
       </AboutMeView>
     </ScrollView>
-  );
+  )
 }
 
 const ProfieImage = styled.Image`
   width: 100%;
   height: 320px;
   border-radius: 30px;
-`;
+`
 
 const SText = styled.Text`
   font-size: 16px;
   line-height: 28px;
   font-family: ${({ theme }) => theme.fonts.primary.regular};
-`;
+`
 
 const AboutMeView = styled.View`
   padding: 30px;
   gap: 20px;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors.grey["600"]};
-`;
+  background-color: ${({ theme }) => theme.colors.grey['600']};
+`

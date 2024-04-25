@@ -1,16 +1,11 @@
-import React from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Tabs } from "expo-router";
-import { Pressable } from "react-native";
-import {
-  FolderKanban,
-  Home,
-  HomeIcon,
-  Smartphone,
-  User,
-} from "lucide-react-native";
+import React from 'react'
+import { Pressable } from 'react-native'
 
-import { useClientOnlyValue } from "@/components/useClientOnlyValue";
+import FontAwesome from '@expo/vector-icons/FontAwesome'
+import { Link, Tabs } from 'expo-router'
+import { FolderKanban, Home, Smartphone, User } from 'lucide-react-native'
+
+import { useClientOnlyValue } from '@/components/useClientOnlyValue'
 
 export default function TabLayout() {
   return (
@@ -25,8 +20,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "",
-          tabBarLabel: "Home",
+          title: '',
+          tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => <Home color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -46,27 +41,27 @@ export default function TabLayout() {
       <Tabs.Screen
         name="about"
         options={{
-          title: "Pavel Zapletal | UX UI designer",
-          tabBarLabel: "About me",
+          title: 'Pavel Zapletal | UX UI designer',
+          tabBarLabel: 'About me',
           tabBarIcon: ({ color }) => <User color={color} />,
         }}
       />
       <Tabs.Screen
         name="projects"
         options={{
-          title: "Pavel Zapletal | UX UI designer",
-          tabBarLabel: "Projects",
+          title: 'Pavel Zapletal | UX UI designer',
+          tabBarLabel: 'Projects',
           tabBarIcon: ({ color }) => <FolderKanban color={color} />,
         }}
       />
       <Tabs.Screen
         name="contact"
         options={{
-          title: "Pavel Zapletal | UX UI designer",
-          tabBarLabel: "Contact me",
+          title: 'Pavel Zapletal | UX UI designer',
+          tabBarLabel: 'Contact me',
           tabBarIcon: ({ color }) => <Smartphone color={color} />,
         }}
       />
     </Tabs>
-  );
+  )
 }

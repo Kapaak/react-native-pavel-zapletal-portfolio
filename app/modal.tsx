@@ -1,21 +1,22 @@
-import { StatusBar } from "expo-status-bar";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from 'react-native'
 
-import EditScreenInfo from "@/components/EditScreenInfo";
-import styled from "styled-components/native";
-import { useTheme } from "styled-components";
+import { StatusBar } from 'expo-status-bar'
+import { useTheme } from 'styled-components'
+import styled from 'styled-components/native'
+
+import EditScreenInfo from '@/components/EditScreenInfo'
 
 const SubmitButton = styled.TouchableOpacity`
   color: #ff0000;
   background: #0000ff;
-`;
+`
 
 const Layout = styled.View`
   background-color: #ababab;
-`;
+`
 
 export default function ModalScreen() {
-  const theme = useTheme();
+  const theme = useTheme()
 
   return (
     <Layout style={styles.container}>
@@ -24,27 +25,27 @@ export default function ModalScreen() {
 
       <EditScreenInfo path="app/modal.tsx" />
       <SubmitButton>
-        <Text style={{ color: "red" }}>Submit</Text>
+        <Text style={{ color: 'red' }}>Submit</Text>
       </SubmitButton>
       {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
+      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </Layout>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
+    alignItems: 'center',
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
   separator: {
     height: 1,
     marginVertical: 30,
-    width: "80%",
+    width: '80%',
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
-});
+})

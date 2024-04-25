@@ -1,32 +1,33 @@
-import { Button, Image, Text, View } from "react-native";
-import { ExternalLink } from "../ExternalLink";
-import { useState } from "react";
+import { useState } from 'react'
+import { Image, Text } from 'react-native'
 
-import * as S from "./Project.style";
+import * as S from './Project.style'
+
+import { ExternalLink } from '../ExternalLink'
 
 interface ProjectProps {
-  title: string;
-  url: string;
-  image: any;
+  title: string
+  url: string
+  image: any
   detail: {
-    technology: string;
-    colors: string[];
-    font: string;
-  };
+    technology: string
+    colors: string[]
+    font: string
+  }
 }
 
 export function Project({ title, url, image, detail }: ProjectProps) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
-  const detailsLabel = open ? "hide details" : "show details";
+  const detailsLabel = open ? 'hide details' : 'show details'
 
   return (
     <S.Project>
-      <Image source={image} style={{ width: "100%", height: 200 }} />
+      <Image source={image} style={{ width: '100%', height: 200 }} />
       <S.ProjectTitle>{title}</S.ProjectTitle>
       <S.ProjectDetailActions>
         <S.ProjectLink>
-          <ExternalLink href={url} style={{ color: "white" }}>
+          <ExternalLink href={url} style={{ color: 'white' }}>
             <S.ProjectLinkText>visit website</S.ProjectLinkText>
           </ExternalLink>
         </S.ProjectLink>
@@ -56,5 +57,5 @@ export function Project({ title, url, image, detail }: ProjectProps) {
         </S.ProjectDetail>
       )}
     </S.Project>
-  );
+  )
 }
